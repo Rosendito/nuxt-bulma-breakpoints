@@ -1,22 +1,16 @@
 # nuxt-breakpoints
 
-> Resize observer breakpoints with Nuxt.js module.
-
-[![NPM](https://nodei.co/npm/nuxt-breakpoints.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/nuxt-breakpoints/)
-<a href="https://www.buymeacoffee.com/steven0811" target="_blank"><img src="https://bmc-cdn.nyc3.digitaloceanspaces.com/BMC-button-images/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: auto !important;width: auto !important;" ></a>
-[![Codecov](https://codecov.io/gh/steven0811/nuxt-breakpoints/branch/master/graph/badge.svg)](https://codecov.io/gh/steven0811/nuxt-breakpoints)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Package Size](https://img.shields.io/bundlephobia/minzip/nuxt-breakpoints)](https://nodei.co/npm/nuxt-breakpoints/)
+> Resize observer breakpoints with Nuxt.js module. Bulma edition
 
 ## Setup
 
-1. Add `nuxt-breakpoints` dependency to your project
+1. Add `nuxt-bulma-breakpoints` dependency to your project
 
 ```bash
-yarn add nuxt-breakpoints # or npm install nuxt-breakpoints
+yarn add nuxt-bulma-breakpoints # or npm install nuxt-breakpoints
 ```
 
-2. Add `nuxt-breakpoints` to the `modules` section of `nuxt.config.js`
+2. Add `nuxt-bulma-breakpoints` to the `modules` section of `nuxt.config.js`
 
 ```js
 {
