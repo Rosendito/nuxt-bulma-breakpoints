@@ -1,6 +1,6 @@
 {
-  "name": "nuxt-breakpoints",
-  "version": "1.1.9",
+  "name": "nuxt-bulma-breakpoints",
+  "version": "1.0.0",
   "description": "Resize observer breakpoints with Nuxt.js module.",
   "license": "MIT",
   "keywords": [
@@ -9,31 +9,29 @@
     "breakpoint",
     "resize",
     "mediaquery",
-    "responsive"
+    "responsive",
+    "bulma"
   ],
   "contributors": [
     {
       "name": "Steven Ho <shockshocksoul@gmail.com>"
+    },
+    {
+      "name": "Rosendito <rosendojose0617@gmail.com>"
     }
   ],
   "main": "lib/module.js",
-  "repository": "https://github.com/steven0811/nuxt-breakpoints.git",
+  "repository": "https://github.com/Rosendito/nuxt-bulma-breakpoints",
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
     "dev": "nuxt example",
-    "build:gh-pages": "cross-env DEPLOY_ENV=GH_PAGES nuxt build example",
-    "generate:gh-pages": "cross-env DEPLOY_ENV=GH_PAGES nuxt generate example",
-    "lint": "eslint --ext .js,.vue example lib test",
-    "test": "yarn lint && jest && codecov",
-    "release": "yarn test && standard-version && git push --follow-tags && npm publish",
-    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
+    "lint": "eslint --ext .js,.vue example lib",
+    "release": "standard-version && git push --follow-tags && npm publish"
   },
-  "types": "types/index.d.ts",
   "files": [
-    "lib",
-    "types/*.d.ts"
+    "lib"
   ],
   "dependencies": {
     "lodash": "^4.17.15",
