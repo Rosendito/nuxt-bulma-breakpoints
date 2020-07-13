@@ -25,19 +25,19 @@ export default {
     bgStyle () {
       let backgroundColor = '#fff'
       switch (this.$breakpoints.current) {
-        case 'xs':
+        case 'mobile':
           backgroundColor = '#B0B1B0'
           break
-        case 'sm':
+        case 'tablet':
           backgroundColor = '#FF8754'
           break
-        case 'md':
+        case 'desktop':
           backgroundColor = '#FFD338'
           break
-        case 'lg':
+        case 'widescreen':
           backgroundColor = '#5CD8FF'
           break
-        case 'xl':
+        case 'fullhd':
           backgroundColor = '#FF406E'
           break
         default:
