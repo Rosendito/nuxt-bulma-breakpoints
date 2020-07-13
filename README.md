@@ -8,12 +8,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Package Size](https://img.shields.io/bundlephobia/minzip/nuxt-breakpoints)](https://nodei.co/npm/nuxt-breakpoints/)
 
-
-
-[DEMO](https://steven0811.github.io/nuxt-breakpoints/)
-
-[📖 **Release Notes**](./CHANGELOG.md)
-
 ## Setup
 
 1. Add `nuxt-breakpoints` dependency to your project
@@ -37,10 +31,10 @@ yarn add nuxt-breakpoints # or npm install nuxt-breakpoints
   // Another way to use options
   breakpoints: {
     // default options
-    sm: 576,
-    md: 768,
-    lg: 992,
-    xl: 1200,
+    tablet: 769,
+    desktop: 1024,
+    widescreen: 1216,
+    fullhd: 1408,
     options: {
       polyfill: true,
       throttle: 200
@@ -53,27 +47,25 @@ yarn add nuxt-breakpoints # or npm install nuxt-breakpoints
 // components.vue
 export default {
   computed: {
-    isMdOrSm () { return this.$breakpoints.md || this.$breakpoints.sm },
-    isLargeThanSm() {
-      return this.$breakpoints.lSm // Is Large than sm include sm
+    isMobile() {
+      return this.$breakpoints.mobile
     },
-    isSmallThanMd() {
-      return this.$breakpoints.sMd // Is Small than md include md
+    current() {
+      return this.$breakpoints.current
     }
-    // ... etc lSm lMd lLg, and sSm sMd sLg
   }
 }
 ```
 
 ## Options
-| property | type                                        | default                           | note                                                                                                                                                                                                                          |
-|----------|---------------------------------------------|-----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| xs       | none                                        | none                              | <= 576px，Extra small, smallest.                                                                                                                                                                                              |
-| sm       | number                                      | 576                               | >= 576px(sm) && <= 768px(md)                                                                                                                                                                                                  |
-| md       | number                                      | 768                               | >= 768px(md) && <= 992px(lg)                                                                                                                                                                                                  |
-| lg       | number                                      | 992                               | >= 992px(lg) && <= 1200px(xl)                                                                                                                                                                                                 |
-| xl       | number                                      | 1200                              | >= 1200px, Extra large, largest.                                                                                                                                                                                              |
-| options  | object<polyfill: boolean, throttle: number> | { polyfill: true, throttle: 200 } | `polyfill` default by true, which means will auto-import `resize-observer-polyfill` when the browser doesn't support ResizeObserver more information below, `throttle` will slow down when Window has resizing trigger speed. |
+| property   | type                                         | default                           | note                                                                                                                                                                                                                     |
+|------------|----------------------------------------------|-----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| mobile     | none                                         | none                              | < 769px (tablet)                                                                                                                                                                                                         |
+| tablet     | number                                       | 769                               | >= 769px (tablet) && <= 1024px (desktop)                                                                                                                                                                                 |
+| desktop    | number                                       | 1024                              | >= 1024px (desktop) && <= 1216px (widescreen)                                                                                                                                                                            |
+| widescreen | number                                       | 1216                              | >= 1216px (widescreen) && <= 1408px (fullhd)                                                                                                                                                                             |
+| fullhd     | number                                       | 1408                              | => 1408px (fullhd)                                                                                                                                                                                                       |
+| options    | object <polyfill: boolean, throttle: number> | { polyfill: true, throttle: 200 } | `polyfill` default by true, which means auto-import `resize-observer-polyfill` when the browser doesn't support ResizeObserver more information below, `throttle` will slow down when Window has resizing trigger speed. |
 
 ## Development
 
@@ -81,16 +73,12 @@ export default {
 2. Install dependencies using `yarn install` or `npm install`
 3. Start development server using `npm run dev`
 
-
 ## Ref
 [Nuxt.js](https://nuxtjs.org)
 
 [MDN - ResizeObserver](https://developer.mozilla.org/en-US/docs/Web/API/ResizeObserver)
 
 [ResizeObserver Polyfill](https://github.com/que-etc/resize-observer-polyfill)
-
-
-
 
 ## License
 
