@@ -44,6 +44,9 @@ export default {
     isMobile() {
       return this.$breakpoints.mobile
     },
+    untilWidescreen(){
+      return this.$breakpoints.untilWidescreen
+    }
     current() {
       return this.$breakpoints.current
     }
@@ -51,21 +54,40 @@ export default {
 }
 ```
 
+## Breakpoints and helpers
+
+| Helper          | Note                                                     |
+|-----------------|----------------------------------------------------------|
+| mobile          | width < 769px (tablet)                                   |
+| tablet          | width >= 769px (tablet) && width                         |
+| tabletOnly      | width >= 769px (tablet) && width < 1024 (desktop)        |
+| touch           | width < 1024px (desktop)                                 |
+| desktop         | width >= 1024px (desktop)                                |
+| desktopOnly     | width >= 1024px (desktop) && width < 1216px (widescreen) |
+| untilWidescreen | width < 1216px (widescreen)                              |
+| widescreen      | width >= 1216px (widescreen)                             |
+| widescreenOnly  | width >= 1216px (widescreen) && width < 1408px (fullhd)  |
+| untilFullhd     | width < 1408px (fullhd)                                  |
+| fullhd          | width >= 1408px (fullhd)                                 |
+
 ## Options
-| property   | type                                         | default                           | note                                                                                                                                                                                                                     |
-|------------|----------------------------------------------|-----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| mobile     | none                                         | none                              | < 769px (tablet)                                                                                                                                                                                                         |
-| tablet     | number                                       | 769                               | >= 769px (tablet) && <= 1024px (desktop)                                                                                                                                                                                 |
-| desktop    | number                                       | 1024                              | >= 1024px (desktop) && <= 1216px (widescreen)                                                                                                                                                                            |
-| widescreen | number                                       | 1216                              | >= 1216px (widescreen) && <= 1408px (fullhd)                                                                                                                                                                             |
-| fullhd     | number                                       | 1408                              | => 1408px (fullhd)                                                                                                                                                                                                       |
-| options    | object <polyfill: boolean, throttle: number> | { polyfill: true, throttle: 200 } | `polyfill` default by true, which means auto-import `resize-observer-polyfill` when the browser doesn't support ResizeObserver more information below, `throttle` will slow down when Window has resizing trigger speed. |
+
+| Property   | Type   | Default                           |
+|------------|--------|-----------------------------------|
+| mobile     | none   | none                              |
+| tablet     | number | 769                               |
+| desktop    | number | 1024                              |
+| widescreen | number | 1216                              |
+| fullhd     | number | 1408                              |
+| options    | object | { polyfill: true, throttle: 200 } |
+
+**Note**: `polyfill` default by true, which means auto-import `resize-observer-polyfill` when the browser doesn't support ResizeObserver more information below, `throttle` will slow down when Window has resizing trigger speed.
 
 ## Development
 
 1. Clone this repository
 2. Install dependencies using `yarn install` or `npm install`
-3. Start development server using `npm run dev`
+3. Start development server using `yarn dev` or `npm run dev`
 
 ## Ref
 [Nuxt.js](https://nuxtjs.org)
