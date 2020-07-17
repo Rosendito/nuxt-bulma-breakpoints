@@ -1,6 +1,6 @@
 {
   "name": "nuxt-bulma-breakpoints",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Resize observer breakpoints with Nuxt.js module. Bulma edition",
   "license": "MIT",
   "keywords": [
