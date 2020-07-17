@@ -1,4 +1,4 @@
-# nuxt-breakpoints
+# nuxt-bulma-breakpoints
 
 > Resize observer breakpoints with Nuxt.js module. Bulma edition
 
@@ -59,7 +59,7 @@ export default {
 | Helper          | Note                                                     |
 |-----------------|----------------------------------------------------------|
 | mobile          | width < 769px (tablet)                                   |
-| tablet          | width >= 769px (tablet) && width                         |
+| tablet          | width >= 769px (tablet)                                  |
 | tabletOnly      | width >= 769px (tablet) && width < 1024 (desktop)        |
 | touch           | width < 1024px (desktop)                                 |
 | desktop         | width >= 1024px (desktop)                                |
